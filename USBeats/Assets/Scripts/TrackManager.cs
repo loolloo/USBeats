@@ -13,6 +13,15 @@ public class TrackManager : MonoBehaviour
     public GameObject notePrefab;
     AudioSource audioSource;
 
+    void SetupModules(bool createMode)
+    {
+        for (int i = 0; i < modules.Length; i++) {
+            modules[i].createMode = createMode;
+            modules[i].manager = this;
+            modules[i].moduleIndex = i;
+        }
+    }
+
     public void StartCreateMode()
     {
         audioSource = GetComponent<AudioSource>();
@@ -22,11 +31,7 @@ public class TrackManager : MonoBehaviour
         createMode = true;
         currentTime = 0;
         currentTrack.Reset();
-        for (int i = 0; i < modules.Length; i++) {
-            modules[i].createMode = true;
-            modules[i].manager = this;
-            modules[i].moduleIndex = i;
-        }
+        SetupModules(true);
     }
 
     public void EndCreateMode()
@@ -37,12 +42,17 @@ public class TrackManager : MonoBehaviour
 
     public void StartPlayMode()
     {
+        audioSource = GetComponent<AudioSource>();
+        audioSource.clip = currentTrack.music;
+        audioSource.Play();
+    
         currentTime = 0;
         running = true;
         for (int i = 0; i < modules.Length; i++) {
             foreach (float stamp in currentTrack.timeStamps[i].stamp)
                 modules[i].SpawnNote(notePrefab, stamp);
         }
+        SetupModules(false);
     }
 
     public void AddTimeStamps(int index)
