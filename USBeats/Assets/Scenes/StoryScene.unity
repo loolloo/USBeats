@@ -163,7 +163,7 @@ TextMesh:
   m_GameObject: {fileID: 211934902}
   m_Text: 'HEllo World
 
-    PlayEe
+    PlayEeh
 
 
     esfsd
@@ -242,7 +242,7 @@ TextMesh:
   m_FontSize: 200
   m_FontStyle: 0
   m_RichText: 1
-  m_Font: {fileID: 12800000, guid: 32d48f77821ea9840be57911df3b41e3, type: 3}
+  m_Font: {fileID: 12800000, guid: 57f2d87a1e8513e46bc708d4e7a6fbe9, type: 3}
   m_Color:
     serializedVersion: 2
     rgba: 4294967295
@@ -264,7 +264,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10100, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 2100000, guid: 57f2d87a1e8513e46bc708d4e7a6fbe9, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -501,7 +501,7 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1988270578}
-  m_Text: PrEss space to skip...
+  m_Text: PRESS SPACE TO SKIP...
   m_OffsetZ: 200
   m_CharacterSize: 1
   m_LineSpacing: 1
