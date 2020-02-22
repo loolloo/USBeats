@@ -15,9 +15,6 @@ MonoBehaviour:
   music: {fileID: 8300000, guid: 726b6864d7f3d9448bc697524c2239c9, type: 3}
   timeStamps:
   - stamp:
-    - 1.1243293
-    - 1.7855217
-    - 2.3357198
-    - 2.9353852
-    - 3.5540674
-    - 4.1523075
+    - 2.4212985
+  - stamp: []
+  - stamp: []
