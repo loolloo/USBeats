@@ -15,5 +15,8 @@ public class TrackManagerEditor : Editor
         if (GUILayout.Button("Start Create Mode")) {
             trackManager.StartCreateMode();
         }
+        if (GUILayout.Button("Start Play Mode")) {
+            trackManager.StartPlayMode();
+        }
     }
 }

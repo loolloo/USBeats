@@ -1149,12 +1149,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49066f2a6492bcc4db152c7c24afc722, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  running: 1
-  createMode: 1
+  running: 0
+  createMode: 0
   currentTime: 0
   currentTrack: {fileID: 11400000, guid: eec208677a9aad84a8a05633ab7805ec, type: 2}
   modules:
   - {fileID: 204270447}
+  notePrefab: {fileID: 199757026037532816, guid: eaf126cf417e11843aa111b82ad671d5,
+    type: 3}
 --- !u!82 &2033622551
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1251,6 +1253,12 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!224 &2118307838 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 3715905235449736189, guid: 292f5963513b51d4a873f6edf2c40861,
+    type: 3}
+  m_PrefabInstance: {fileID: 3715905235680240643}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3715905235680240643
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1258,6 +1266,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1437267348}
     m_Modifications:
+    - target: {fileID: 3715905235744509804, guid: 292f5963513b51d4a873f6edf2c40861,
+        type: 3}
+      propertyPath: noteSpawn
+      value: 
+      objectReference: {fileID: 2118307838}
+    - target: {fileID: 3715905235744509804, guid: 292f5963513b51d4a873f6edf2c40861,
+        type: 3}
+      propertyPath: noteSpeed
+      value: 150
+      objectReference: {fileID: 0}
     - target: {fileID: 3715905235744509805, guid: 292f5963513b51d4a873f6edf2c40861,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1367,6 +1385,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: GameModule
+      objectReference: {fileID: 0}
+    - target: {fileID: 3715905235975055139, guid: 292f5963513b51d4a873f6edf2c40861,
+        type: 3}
+      propertyPath: m_BodyType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3715905235975055139, guid: 292f5963513b51d4a873f6edf2c40861,
+        type: 3}
+      propertyPath: m_UseFullKinematicContacts
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3715905235975055139, guid: 292f5963513b51d4a873f6edf2c40861,
+        type: 3}
+      propertyPath: m_Simulated
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3715905236357669090, guid: 292f5963513b51d4a873f6edf2c40861,
         type: 3}
