@@ -10,11 +10,17 @@ public class TrackManager : MonoBehaviour
     public Track currentTrack;
     public FolderModule[] modules;
 
-    [ContextMenu("Start")]
-    void StartCreateMode()
+    AudioSource audioSource;
+
+    public void StartCreateMode()
     {
+        audioSource = GetComponent<AudioSource>();
+        audioSource.clip = currentTrack.music;
+        audioSource.Play();
         running = true;
         createMode = true;
+        currentTime = 0;
+        currentTrack.Reset();
         for (int i = 0; i < modules.Length; i++) {
             modules[i].createMode = true;
             modules[i].manager = this;
@@ -22,9 +28,15 @@ public class TrackManager : MonoBehaviour
         }
     }
 
+    public void EndCreateMode()
+    {
+        createMode = false;
+        running = false;
+    }
+
     public void AddTimeStamps(int index)
     {
-        Debug.Log("Add:" + currentTime.ToString());
+        Debug.Log("Add to module (" + index + "):" + currentTime.ToString());
         currentTrack.timeStamps[index].stamp.Add(currentTime);
     }
 
@@ -32,5 +44,9 @@ public class TrackManager : MonoBehaviour
     {
         if (running)
             currentTime += Time.deltaTime;
+        if (createMode && audioSource) {
+            if (!audioSource.isPlaying)
+                EndCreateMode();
+        }
     }
 }

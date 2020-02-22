@@ -11,5 +11,12 @@ public class SoloTrack
 [CreateAssetMenu()]
 public class Track : ScriptableObject
 {
+    public AudioClip music;
 	public SoloTrack[] timeStamps;
+
+    public void Reset()
+    {
+        foreach (SoloTrack soloTrack in timeStamps)
+            soloTrack.stamp = new List<float>();
+    }
 }
