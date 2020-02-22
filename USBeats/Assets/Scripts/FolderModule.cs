@@ -13,6 +13,9 @@ public class FolderModule : MonoBehaviour
     float maxSize;
     float noteSpeed;
 
+    public TrackManager manager;
+    public int moduleIndex;
+
     [Header("UI Elements")]
     Slider sizeJauge;
     [SerializeField]
@@ -38,7 +41,7 @@ public class FolderModule : MonoBehaviour
 
     void AddNote()
     {
-
+        manager.AddTimeStamps(moduleIndex);
     }
 
     void SpawnNote(GameObject notePrefab, float delay)

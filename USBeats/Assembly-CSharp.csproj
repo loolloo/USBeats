@@ -47,8 +47,11 @@
   <ItemGroup>
      <Compile Include="Assets\Note.cs" />
      <Compile Include="Assets\NoteTrigger.cs" />
+     <Compile Include="Assets\Scenes\Timestamps.cs" />
      <Compile Include="Assets\Scripts\FolderModule.cs" />
      <Compile Include="Assets\Scripts\Listee.cs" />
+     <Compile Include="Assets\Scripts\Track.cs" />
+     <Compile Include="Assets\Scripts\TrackManager.cs" />
  <Reference Include="UnityEngine">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.2f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
  </Reference>
