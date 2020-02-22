@@ -7,11 +7,14 @@ public class TrackManager : MonoBehaviour
     public bool running = false;
     public bool createMode = false;
     public float currentTime;
+
+    [Header("References")]
     public Track currentTrack;
     public FolderModule[] modules;
-
+    public USBModule usbModule;
     public GameObject notePrefab;
     AudioSource audioSource;
+
 
     void SetupModules(bool createMode)
     {
@@ -55,6 +58,11 @@ public class TrackManager : MonoBehaviour
             foreach (float stamp in currentTrack.timeStamps[i].stamp)
                 modules[i].SpawnNote(notePrefab, stamp);
         }
+    }
+
+    public void DumpModule(int index, int data)
+    {
+        usbModule.AddData(data);
     }
 
     public void AddTimeStamps(int index)
