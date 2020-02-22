@@ -8,13 +8,17 @@ public class Note : MonoBehaviour
 {
     public Color catchedColor;
     public float speed;
-    int noteSize;
+    public int noteSize;
+    public Text noteText;
 
     Image _image;
 
     void Start()
     {
         _image = GetComponent<Image>();
+        // 2, 4, 8, 16
+        noteSize = (int)Mathf.Pow(2, UnityEngine.Random.Range(1, 5));
+        noteText.text = noteSize + " Mo";
     }
 
     public void OnCatch()
