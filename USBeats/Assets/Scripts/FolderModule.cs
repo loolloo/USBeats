@@ -51,7 +51,6 @@ public class FolderModule : MonoBehaviour
 
         noteScript.speed = noteSpeed;
         note.transform.position = noteSpawn.position + new Vector3(0, 1, 0) * noteSpeed * delay;
-        Debug.Log("Spawn note");
     }
 
     void CatchNote()
