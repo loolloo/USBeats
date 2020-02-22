@@ -11,6 +11,7 @@ public class NoteTrigger : MonoBehaviour
         Note noteComponent = collider.gameObject.GetComponent<Note>();
 
         if (noteComponent) {
+            Debug.Log("Trigger: " + noteComponent.gameObject.name);
             registeredNote = noteComponent;
         }
     }

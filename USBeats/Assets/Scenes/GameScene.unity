@@ -1266,6 +1266,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1437267348}
     m_Modifications:
+    - target: {fileID: 3715905235331913173, guid: 292f5963513b51d4a873f6edf2c40861,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3715905235449736188, guid: 292f5963513b51d4a873f6edf2c40861,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 120
+      objectReference: {fileID: 0}
     - target: {fileID: 3715905235744509804, guid: 292f5963513b51d4a873f6edf2c40861,
         type: 3}
       propertyPath: noteSpawn
@@ -1385,6 +1395,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: GameModule
+      objectReference: {fileID: 0}
+    - target: {fileID: 3715905235975055129, guid: 292f5963513b51d4a873f6edf2c40861,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3715905235975055139, guid: 292f5963513b51d4a873f6edf2c40861,
         type: 3}
