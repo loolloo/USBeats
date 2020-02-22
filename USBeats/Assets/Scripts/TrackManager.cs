@@ -10,6 +10,7 @@ public class TrackManager : MonoBehaviour
     public Track currentTrack;
     public FolderModule[] modules;
 
+    public GameObject notePrefab;
     AudioSource audioSource;
 
     public void StartCreateMode()
@@ -32,6 +33,16 @@ public class TrackManager : MonoBehaviour
     {
         createMode = false;
         running = false;
+    }
+
+    public void StartPlayMode()
+    {
+        currentTime = 0;
+        running = true;
+        for (int i = 0; i < modules.Length; i++) {
+            foreach (float stamp in currentTrack.timeStamps[i].stamp)
+                modules[i].SpawnNote(notePrefab, stamp);
+        }
     }
 
     public void AddTimeStamps(int index)

@@ -7,11 +7,11 @@ public class FolderModule : MonoBehaviour
 {
     public bool createMode = false;
     public KeyCode inputKey;
-    Transform noteSpawn;
+    public Transform noteSpawn;
 
     float currentSize;
     float maxSize;
-    float noteSpeed;
+    public float noteSpeed;
 
     public TrackManager manager;
     public int moduleIndex;
@@ -44,13 +44,14 @@ public class FolderModule : MonoBehaviour
         manager.AddTimeStamps(moduleIndex);
     }
 
-    void SpawnNote(GameObject notePrefab, float delay)
+    public void SpawnNote(GameObject notePrefab, float delay)
     {
         GameObject note = Instantiate(notePrefab, noteSpawn);
-        Rigidbody2D rb = note.GetComponent<Rigidbody2D>();
+        Note noteScript = note.GetComponent<Note>();
 
-        note.transform.position = noteSpawn.position;
-        rb.velocity = new Vector3(0, -noteSpeed, 0);
+        noteScript.speed = noteSpeed;
+        note.transform.position = noteSpawn.position + new Vector3(0, 1, 0) * noteSpeed * delay;
+        Debug.Log("Spawn note");
     }
 
     void CatchNote()

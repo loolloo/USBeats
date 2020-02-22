@@ -7,6 +7,7 @@ using UnityEngine.Events;
 public class Note : MonoBehaviour
 {
     public Color catchedColor;
+    public float speed;
     int noteSize;
 
     Image _image;
@@ -19,5 +20,10 @@ public class Note : MonoBehaviour
     public void OnCatch()
     {
         _image.color = catchedColor;
+    }
+
+    void Update()
+    {
+        transform.position += Vector3.down * speed * Time.deltaTime;
     }
 }
