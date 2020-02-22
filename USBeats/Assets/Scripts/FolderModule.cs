@@ -5,24 +5,18 @@ using UnityEngine.UI;
 
 public class FolderModule : MonoBehaviour
 {
-    public bool createMode = false;
     public KeyCode inputKey;
-    public Transform noteSpawn;
 
-    float currentSize;
-    float maxSize;
+    [Header("Manager Elements")]
+    public bool createMode = false;
     public float noteSpeed;
-
     public TrackManager manager;
     public int moduleIndex;
 
     [Header("UI Elements")]
-    Slider sizeJauge;
-    [SerializeField]
-    NoteTrigger noteTrigger;
-
-    [Header("Debug")]
-    GameObject _notePrefab;
+    [SerializeField] Transform noteSpawn;
+    [SerializeField] NoteTrigger noteTrigger;
+    [SerializeField] Slider folderSize;
 
     void Update()
     {
