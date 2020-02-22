@@ -13,6 +13,7 @@ public class Track : ScriptableObject
 {
     public AudioClip music;
 	public SoloTrack[] timeStamps;
+    public int maxFolderSize;
 
     public void Reset()
     {

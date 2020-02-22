@@ -19,6 +19,8 @@ public class TrackManager : MonoBehaviour
             modules[i].createMode = createMode;
             modules[i].manager = this;
             modules[i].moduleIndex = i;
+            modules[i].maxFolderData = currentTrack.maxFolderSize;
+            modules[i].RemoveNotes();
         }
     }
 
@@ -48,11 +50,11 @@ public class TrackManager : MonoBehaviour
     
         currentTime = 0;
         running = true;
+        SetupModules(false);
         for (int i = 0; i < modules.Length; i++) {
             foreach (float stamp in currentTrack.timeStamps[i].stamp)
                 modules[i].SpawnNote(notePrefab, stamp);
         }
-        SetupModules(false);
     }
 
     public void AddTimeStamps(int index)
