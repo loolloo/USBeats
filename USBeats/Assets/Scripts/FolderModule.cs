@@ -44,7 +44,7 @@ public class FolderModule : MonoBehaviour
         Note noteScript = note.GetComponent<Note>();
 
         noteScript.speed = noteSpeed;
-        note.transform.position = noteSpawn.position + new Vector3(0, 1, 0) * noteSpeed * delay;
+        note.transform.position = noteTrigger.transform.position + new Vector3(0, 1, 0) * noteSpeed * delay;
     }
 
     void CatchNote()
