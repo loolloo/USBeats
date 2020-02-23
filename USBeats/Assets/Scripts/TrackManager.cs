@@ -19,6 +19,7 @@ public class TrackManager : MonoBehaviour
     void SetupModules(bool createMode)
     {
         for (int i = 0; i < modules.Length; i++) {
+            modules[i].transform.SetSiblingIndex(i);
             modules[i].createMode = createMode;
             modules[i].manager = this;
             modules[i].moduleIndex = i;
