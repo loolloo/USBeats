@@ -83,7 +83,10 @@ public class FolderModule : MonoBehaviour
     void DumpData()
     {
         manager.DumpModule(moduleIndex, folderData);
+        // add the exess data to the result (uncomment when the function gets implemented)
+        // manager.DumpBadData(moduleIndex, deadData);
         folderData = 0;
+        deadData = 0;
         folderSize.value = 0;
     }
 
