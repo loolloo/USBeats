@@ -21,11 +21,13 @@ public class FolderModule : MonoBehaviour
     [SerializeField] Transform noteSpawn;
     [SerializeField] NoteTrigger noteTrigger;
     [SerializeField] Slider folderSize;
+    [SerializeField] Text capacity;
 
     void Start()
     {
         folderData = 0;
         folderSize.value = 0;
+        capacity.text = (maxFolderData - folderData) + " Mo";
     }
 
     void Update()
@@ -61,6 +63,7 @@ public class FolderModule : MonoBehaviour
     {
         folderData += data;
         folderSize.value = (float)folderData / (float)maxFolderData;
+        capacity.text = (maxFolderData - folderData) + " Mo";
     }
 
     void DumpData()
