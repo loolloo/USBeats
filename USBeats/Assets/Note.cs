@@ -10,6 +10,7 @@ public class Note : MonoBehaviour
     public float speed;
     public int noteSize;
     public Text noteText;
+    [SerializeField] Gradient gradient;
 
     Image _image;
 
@@ -18,6 +19,7 @@ public class Note : MonoBehaviour
         _image = GetComponent<Image>();
         // 2, 4, 8, 16
         noteSize = (int)Mathf.Pow(2, UnityEngine.Random.Range(1, 5));
+        _image.color = gradient.Evaluate((float)noteSize / (float)16);
         noteText.text = noteSize + " Mo";
     }
 
