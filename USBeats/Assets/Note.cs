@@ -7,6 +7,7 @@ using UnityEngine.Events;
 public class Note : MonoBehaviour
 {
     public Color catchedColor;
+    public Color rejectedColor;
     public float speed;
     public int noteSize;
     public Text noteText;
@@ -26,6 +27,11 @@ public class Note : MonoBehaviour
     public void OnCatch()
     {
         _image.color = catchedColor;
+    }
+
+    public void OnReject()
+    {
+        _image.color = rejectedColor;
     }
 
     void Update()
