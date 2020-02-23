@@ -5,7 +5,11 @@ using UnityEngine.UI;
 
 public class FolderModule : MonoBehaviour
 {
-    public KeyCode inputKey;
+    public KeyCode catchKey;
+    public KeyCode dumpKey;
+
+    int folderData = 0;
+    public int maxFolderData;
 
     [Header("Manager Elements")]
     public bool createMode = false;
@@ -18,9 +22,15 @@ public class FolderModule : MonoBehaviour
     [SerializeField] NoteTrigger noteTrigger;
     [SerializeField] Slider folderSize;
 
+    void Start()
+    {
+        folderData = 0;
+        folderSize.value = 0;
+    }
+
     void Update()
     {
-        if (Input.GetKeyDown(inputKey))
+        if (Input.GetKeyDown(catchKey))
             Press();
     }
 
@@ -38,6 +48,12 @@ public class FolderModule : MonoBehaviour
         manager.AddTimeStamps(moduleIndex);
     }
 
+    void AddData(int data)
+    {
+        folderData += data;
+        folderSize.value = (float)folderData / (float)maxFolderData;
+    }
+
     public void SpawnNote(GameObject notePrefab, float delay)
     {
         GameObject note = Instantiate(notePrefab, noteSpawn);
@@ -47,11 +63,26 @@ public class FolderModule : MonoBehaviour
         note.transform.position = noteTrigger.transform.position + new Vector3(0, 1, 0) * noteSpeed * delay;
     }
 
+    public void RemoveNotes()
+    {
+        List<GameObject> toDestroy = new List<GameObject>();
+
+        for (int i = 0; i < noteSpawn.childCount; i++) {
+            toDestroy.Add(noteSpawn.GetChild(i).gameObject);
+        }
+        foreach (GameObject obj in toDestroy)
+            DestroyImmediate(obj);
+    }
+
     void CatchNote()
     {
+        Note note;
+
         if (noteTrigger.registeredNote) {
-            noteTrigger.registeredNote.OnCatch();
-            Debug.Log("Catch Node");
+            Debug.Log("Catch");
+            note = noteTrigger.registeredNote;
+            note.OnCatch();
+            AddData(note.noteSize);
         } else {
             Debug.Log("No Note Catched");
         }
