@@ -10,11 +10,19 @@ public class USBModule : MonoBehaviour
     public int maxData;
 
     [Header("UI Elements")]
+    [SerializeField] string valueSuffix;
+    [SerializeField] Text text;
     [SerializeField] Slider jauge;
+
+    void Start()
+    {
+        text.text = currentData + valueSuffix;
+    }
 
     public void AddData(int data)
     {
         currentData += data;
+        text.text = currentData + valueSuffix;
     }
 
     void Update()
