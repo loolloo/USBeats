@@ -31,15 +31,24 @@ public class FolderModule : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(catchKey))
-            Press();
+            PressCatch();
+        else if (Input.GetKeyDown(dumpKey))
+            PressDump();
     }
 
-    void Press()
+    void PressCatch()
     {
         if (createMode) {
             AddNote();
         } else {
             CatchNote();
+        }
+    }
+
+    void PressDump()
+    {
+        if (!createMode) {
+            DumpData();
         }
     }
 
@@ -52,6 +61,13 @@ public class FolderModule : MonoBehaviour
     {
         folderData += data;
         folderSize.value = (float)folderData / (float)maxFolderData;
+    }
+
+    void DumpData()
+    {
+        manager.DumpModule(moduleIndex, folderData);
+        folderData = 0;
+        folderSize.value = 0;
     }
 
     public void SpawnNote(GameObject notePrefab, float delay)
