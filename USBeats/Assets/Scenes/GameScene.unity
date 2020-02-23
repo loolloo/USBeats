@@ -1113,7 +1113,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 56957524}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11500000, guid: b1a23c57a7df23b448a35a92932ad8c2, type: 3}
+        m_MethodName: set_name
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: ExitGame
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &56957524
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2213,6 +2224,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af25cb49276ffaa45bb6179e4d9d8ba6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  paused: 0
 --- !u!1 &185730195
 GameObject:
   m_ObjectHideFlags: 0
@@ -8085,6 +8097,11 @@ PrefabInstance:
       propertyPath: dumpKey
       value: 102
       objectReference: {fileID: 0}
+    - target: {fileID: 3715905235744509804, guid: 292f5963513b51d4a873f6edf2c40861,
+        type: 3}
+      propertyPath: noteSpeed
+      value: 400
+      objectReference: {fileID: 0}
     - target: {fileID: 3715905235744509805, guid: 292f5963513b51d4a873f6edf2c40861,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -12186,8 +12203,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentData: 0
   missedData: 0
-  maxData: 256
-  valueSuffix: Mo
+  maxData: 0
+  valueSuffix: ' Mo'
   text: {fileID: 1836069593}
   jauge: {fileID: 1311469565}
   missed: {fileID: 401290452}
@@ -17284,6 +17301,11 @@ PrefabInstance:
       propertyPath: dumpKey
       value: 115
       objectReference: {fileID: 0}
+    - target: {fileID: 3715905235744509804, guid: 292f5963513b51d4a873f6edf2c40861,
+        type: 3}
+      propertyPath: noteSpeed
+      value: 400
+      objectReference: {fileID: 0}
     - target: {fileID: 3715905235744509805, guid: 292f5963513b51d4a873f6edf2c40861,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -18872,7 +18894,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 57f2d87a1e8513e46bc708d4e7a6fbe9, type: 3}
     m_FontSize: 32
     m_FontStyle: 1
     m_BestFit: 1
@@ -19571,6 +19593,11 @@ PrefabInstance:
         type: 3}
       propertyPath: dumpKey
       value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 3715905235744509804, guid: 292f5963513b51d4a873f6edf2c40861,
+        type: 3}
+      propertyPath: noteSpeed
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 3715905235744509805, guid: 292f5963513b51d4a873f6edf2c40861,
         type: 3}
@@ -21406,6 +21433,11 @@ PrefabInstance:
         type: 3}
       propertyPath: dumpKey
       value: 113
+      objectReference: {fileID: 0}
+    - target: {fileID: 3715905235744509804, guid: 292f5963513b51d4a873f6edf2c40861,
+        type: 3}
+      propertyPath: noteSpeed
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 3715905235744509805, guid: 292f5963513b51d4a873f6edf2c40861,
         type: 3}

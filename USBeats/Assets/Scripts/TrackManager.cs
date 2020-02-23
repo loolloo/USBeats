@@ -61,10 +61,13 @@ public class TrackManager : MonoBehaviour
         currentTime = 0;
         running = true;
         SetupModules(false);
+        int totalTrackSize = 0;
         for (int i = 0; i < modules.Length; i++) {
             foreach (float stamp in currentTrack.timeStamps[i].stamp)
-                modules[i].SpawnNote(notePrefab, stamp);
+                totalTrackSize += modules[i].SpawnNote(notePrefab, stamp);;
         }
+        // If the size of the usb shouldnd be less than the size of 4 folders (to take into account the exess data)
+        usbModule.maxData = Mathf.Max(totalTrackSize, 256);
     }
 
     public void DumpModule(int index, int data)

@@ -8,6 +8,9 @@ public class USBModule : MonoBehaviour
     [Header("Data")]
     [SerializeField] int currentData;
     [SerializeField] int missedData;
+    int totalData {
+        get { return currentData + missedData; }
+    }
     public int maxData;
 
     [Header("UI Elements")]
@@ -23,23 +26,23 @@ public class USBModule : MonoBehaviour
 
     public void AddData(int data)
     {
-        if (currentData + missedData > maxData)
+        if (totalData > maxData)
             return;
         currentData += data;
-        text.text = currentData + missedData + valueSuffix;
+        text.text = totalData + valueSuffix;
     }
 
     public void AddBadData(int data)
     {
-        if (currentData + missedData > maxData)
+        if (totalData > maxData)
             return;
         missedData += data;
-        text.text = currentData + missedData + valueSuffix;
+        text.text = totalData + valueSuffix;
     }
 
     void Update()
     {
         jauge.value = (float)currentData / (float)maxData;
-        missed.value = ((float)currentData + (float)missedData) / (float)maxData;
+        missed.value = (float)totalData / (float)maxData;
     }
 }

@@ -112,13 +112,15 @@ public class FolderModule : MonoBehaviour
         folderSize.value = 0;
     }
 
-    public void SpawnNote(GameObject notePrefab, float delay)
+    // Spawn a note, the function returns the note's size
+    public int SpawnNote(GameObject notePrefab, float delay)
     {
         GameObject note = Instantiate(notePrefab, noteSpawn);
         Note noteScript = note.GetComponent<Note>();
 
         noteScript.speed = noteSpeed;
         note.transform.position = noteTrigger.transform.position + new Vector3(0, 1, 0) * noteSpeed * delay;
+        return noteScript.noteSize;
     }
 
     public void RemoveNotes()
