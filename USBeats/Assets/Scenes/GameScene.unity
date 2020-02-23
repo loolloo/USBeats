@@ -2595,7 +2595,7 @@ PrefabInstance:
     - target: {fileID: 3715905235744509804, guid: 292f5963513b51d4a873f6edf2c40861,
         type: 3}
       propertyPath: catchKey
-      value: 101
+      value: 114
       objectReference: {fileID: 0}
     - target: {fileID: 3715905235744509804, guid: 292f5963513b51d4a873f6edf2c40861,
         type: 3}
@@ -5555,7 +5555,7 @@ PrefabInstance:
     - target: {fileID: 3715905235744509804, guid: 292f5963513b51d4a873f6edf2c40861,
         type: 3}
       propertyPath: catchKey
-      value: 114
+      value: 101
       objectReference: {fileID: 0}
     - target: {fileID: 3715905235744509804, guid: 292f5963513b51d4a873f6edf2c40861,
         type: 3}

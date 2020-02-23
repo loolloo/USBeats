@@ -17,6 +17,8 @@ public class TrackManager : MonoBehaviour
 
     void Start()
     {
+        running = false;
+        createMode = false;
         SetupModules(false);
     }
 

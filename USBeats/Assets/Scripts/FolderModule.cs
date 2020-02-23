@@ -97,6 +97,7 @@ public class FolderModule : MonoBehaviour
     {
         Note note;
 
+        noteTrigger.onCatch?.Invoke();
         if (noteTrigger.registeredNote) {
             Debug.Log("Catch");
             note = noteTrigger.registeredNote;
