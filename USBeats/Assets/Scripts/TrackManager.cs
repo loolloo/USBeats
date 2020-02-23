@@ -72,6 +72,11 @@ public class TrackManager : MonoBehaviour
         usbModule.AddData(data);
     }
 
+    public void DumpBadData(int index, int data)
+    {
+        usbModule.AddBadData(data);
+    }
+
     public void AddTimeStamps(int index)
     {
         Debug.Log("Add to module (" + index + "):" + currentTime.ToString());

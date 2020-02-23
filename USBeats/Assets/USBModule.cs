@@ -23,8 +23,18 @@ public class USBModule : MonoBehaviour
 
     public void AddData(int data)
     {
+        if (currentData + missedData > maxData)
+            return;
         currentData += data;
-        text.text = currentData + valueSuffix;
+        text.text = currentData + missedData + valueSuffix;
+    }
+
+    public void AddBadData(int data)
+    {
+        if (currentData + missedData > maxData)
+            return;
+        missedData += data;
+        text.text = currentData + missedData + valueSuffix;
     }
 
     void Update()
