@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using static ControlKey;
 
 public class FolderModule : MonoBehaviour
 {
-    public KeyCode catchKey;
-    public KeyCode dumpKey;
+    public int folder;
+    KeyCode catchKey;
+    KeyCode dumpKey;
 
     [SerializeField] int folderData = 0;
     [SerializeField] int deadData = 0;
@@ -33,6 +35,26 @@ public class FolderModule : MonoBehaviour
         deadData = 0;
         folderSize.value = 0;
         capacity.text = (maxFolderData - totalData) + " Mo";
+        if (folder == 1)
+        {
+            catchKey = KeyCatch1;
+            dumpKey = KeyTransfert1;
+        }
+        else if (folder == 2)
+        {
+            catchKey = KeyCatch2;
+            dumpKey = KeyTransfert2;
+        }
+        else if (folder == 3)
+        {
+            catchKey = KeyCatch3;
+            dumpKey = KeyTransfert3;
+        }
+        else if (folder == 4)
+        {
+            catchKey = KeyCatch4;
+            dumpKey = KeyTransfert4;
+        }
     }
 
     void Update()
