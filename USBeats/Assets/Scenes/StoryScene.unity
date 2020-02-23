@@ -161,78 +161,16 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 211934902}
-  m_Text: 'HEllo World
-
-    PlayEeh
-
-
-    esfsd
-
-    f
-
-    ezsf
-
-    s
-
-    g
-
-    re
-
-    sf
-
-    ez
-
-
-    fz
-
-    q
-
-    e
-
-    s
-
-    f
-
-    sd
-
-    gf
-
-    za
-
-    g
-
-    re
-
-    dsf
-
-    z
-
-    g
-
-    re
-
-    sqf
-
-
-    re
-
-    gf
-
-    za
-
-    g
-
-    re
-
-    dsf
-
-    za
-
-    rz
-
-    sqfezsqf
-
-    za'
+  m_Text: "In the year 2142, \nin a world ravaged by \na cataclysm, a group of \nsurvivors
+    named the \n*insert super cool name here* \nsearch for the remains of \nthe data
+    from the past.\r\n\nHowever,\nthe few remaining physical \narchive were destroyed
+    \nduring the disaster.\r\n\nFortunately for the group, \nthe majority of the
+    data \nwas backed up online. \n\nThe downside is that \nthe Internet being down,
+    \naccess to said data \nare difficult.\n\r\nThey set off in search of \nan access
+    point and \nmanaged to find \nthe last standing antenna.\n\r\nIt's condition
+    was critical \nand they had to hurry \nto extract as much data \nas possible.\n\r\nHowever,
+    \nlurking in the deep dark web \namongst the treasured data, \nthe viruses and
+    malwares \nfrom the past are going to \nimpede in our hero's task."
   m_OffsetZ: 100
   m_CharacterSize: 1
   m_LineSpacing: 1
