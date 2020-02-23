@@ -6,13 +6,15 @@ using UnityEngine.UI;
 public class USBModule : MonoBehaviour
 {
     [Header("Data")]
-    int currentData;
+    [SerializeField] int currentData;
+    [SerializeField] int missedData;
     public int maxData;
 
     [Header("UI Elements")]
     [SerializeField] string valueSuffix;
     [SerializeField] Text text;
     [SerializeField] Slider jauge;
+    [SerializeField] Slider missed;
 
     void Start()
     {
@@ -21,12 +23,23 @@ public class USBModule : MonoBehaviour
 
     public void AddData(int data)
     {
+        if (currentData + missedData > maxData)
+            return;
         currentData += data;
-        text.text = currentData + valueSuffix;
+        text.text = currentData + missedData + valueSuffix;
+    }
+
+    public void AddBadData(int data)
+    {
+        if (currentData + missedData > maxData)
+            return;
+        missedData += data;
+        text.text = currentData + missedData + valueSuffix;
     }
 
     void Update()
     {
         jauge.value = (float)currentData / (float)maxData;
+        missed.value = ((float)currentData + (float)missedData) / (float)maxData;
     }
 }
