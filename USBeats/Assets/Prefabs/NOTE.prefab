@@ -54,6 +54,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   catchedColor: {r: 0.21765637, g: 1, b: 0, a: 1}
+  rejectedColor: {r: 1, g: 0.033018887, b: 0.033018887, a: 1}
   speed: 0
   noteSize: 0
   noteText: {fileID: 5894700238650716880}

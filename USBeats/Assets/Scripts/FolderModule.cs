@@ -9,6 +9,10 @@ public class FolderModule : MonoBehaviour
     public KeyCode dumpKey;
 
     [SerializeField] int folderData = 0;
+    [SerializeField] int deadData = 0;
+    [SerializeField] int totalData {
+        get { return folderData + deadData; }
+    }
     public int maxFolderData;
 
     [Header("Manager Elements")]
@@ -26,8 +30,9 @@ public class FolderModule : MonoBehaviour
     void Start()
     {
         folderData = 0;
+        deadData = 0;
         folderSize.value = 0;
-        capacity.text = (maxFolderData - folderData) + " Mo";
+        capacity.text = (maxFolderData - totalData) + " Mo";
     }
 
     void Update()
@@ -36,8 +41,8 @@ public class FolderModule : MonoBehaviour
             PressCatch();
         else if (Input.GetKeyDown(dumpKey))
             PressDump();
-        capacity.text = (maxFolderData - folderData) + " Mo";
-        folderSize.value = (float)folderData / (float)maxFolderData;
+        capacity.text = (maxFolderData - totalData) + " Mo";
+        folderSize.value = (float)totalData / (float)maxFolderData;
     }
 
     void PressCatch()
@@ -64,11 +69,15 @@ public class FolderModule : MonoBehaviour
     void AddData(int data)
     {
         folderData += data;
-        if (folderData > maxFolderData) {
-            folderData = 0;
-        }
-        folderSize.value = (float)folderData / (float)maxFolderData;
-        capacity.text = (maxFolderData - folderData) + " Mo";
+        folderSize.value = (float)totalData / (float)maxFolderData;
+        capacity.text = (maxFolderData - totalData) + " Mo";
+    }
+
+    void AddDeadData()
+    {
+        deadData += maxFolderData - totalData;
+        folderSize.value = (float)totalData / (float)maxFolderData;
+        capacity.text = (maxFolderData - totalData) + " Mo";
     }
 
     void DumpData()
@@ -104,10 +113,20 @@ public class FolderModule : MonoBehaviour
 
         noteTrigger.onCatch?.Invoke();
         if (noteTrigger.registeredNote) {
-            Debug.Log("Catch");
             note = noteTrigger.registeredNote;
-            note.OnCatch();
-            AddData(note.noteSize);
+
+            if (totalData + note.noteSize <= maxFolderData) {
+                // If the folder has enough space, the data will be added
+                Debug.Log("Catch");
+                note.OnCatch();
+                AddData(note.noteSize);
+            } else {
+                // If the folder doesn't have enough space, fill it with unusable data
+                Debug.Log("Bad catch");
+                note.OnReject();
+                if (totalData != maxFolderData)
+                    AddDeadData();
+            }
         } else {
             Debug.Log("No Note Catched");
         }
