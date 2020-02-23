@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TextScroll : MonoBehaviour
 {
@@ -13,5 +14,9 @@ public class TextScroll : MonoBehaviour
         Vector3 localVectorUp = transform.TransformDirection(0, 1, 0);
         pos += localVectorUp * scrollSpeed * Time.deltaTime;
         transform.position = pos;
+        if (pos.y > 600)
+        {
+            SceneManager.LoadScene("GameScene");
+        }
     }
 }

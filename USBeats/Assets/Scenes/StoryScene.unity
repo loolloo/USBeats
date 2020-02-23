@@ -161,16 +161,16 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 211934902}
-  m_Text: "In the year 2142, \nin a world ravaged by \na cataclysm, a group of \nsurvivors
-    named the \n*insert super cool name here* \nsearch for the remains of \nthe data
-    from the past.\r\n\nHowever,\nthe few remaining physical \narchive were destroyed
-    \nduring the disaster.\r\n\nFortunately for the group, \nthe majority of the
-    data \nwas backed up online. \n\nThe downside is that \nthe Internet being down,
-    \naccess to said data \nare difficult.\n\r\nThey set off in search of \nan access
-    point and \nmanaged to find \nthe last standing antenna.\n\r\nIt's condition
-    was critical \nand they had to hurry \nto extract as much data \nas possible.\n\r\nHowever,
-    \nlurking in the deep dark web \namongst the treasured data, \nthe viruses and
-    malwares \nfrom the past are going to \nimpede in our hero's task."
+  m_Text: "In thE yEar 2142, \nin a world ravagEd by \na cataclysm, a group of \nsurvivors
+    namEd thE \n*insErt supEr cool namE hErE* \nsEarch for thE rEmains of \nthE data
+    from thE past.\r\n\nHowEvEr,\nthE fEw rEmaining physical \narchivE wErE dEstroyEd
+    \nduring thE disastEr.\r\n\nFortunatEly for thE group, \nthE majority of thE
+    data \nwas backEd up onlinE. \n\nThE downsidE is that \nthE IntErnEt bEing down,
+    \naccEss to said data \narE difficult.\n\r\nThEy sEt off in sEarch of \nan accEss
+    point and \nmanagEd to find \nthE last standing antEnna.\n\r\nIt's condition
+    was critical \nand thEy had to hurry \nto Extract as much data \nas possiblE.\n\r\nHowEvEr,
+    \nlurking in thE dEEp dark wEb \namongst thE trEasurEd data, \nthE virusEs and
+    malwarEs \nfrom thE past arE going to \nimpEdE in our hEro's task."
   m_OffsetZ: 100
   m_CharacterSize: 1
   m_LineSpacing: 1
