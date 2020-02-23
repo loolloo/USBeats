@@ -8,7 +8,7 @@ public class FolderModule : MonoBehaviour
     public KeyCode catchKey;
     public KeyCode dumpKey;
 
-    int folderData = 0;
+    [SerializeField] int folderData = 0;
     public int maxFolderData;
 
     [Header("Manager Elements")]
@@ -36,6 +36,8 @@ public class FolderModule : MonoBehaviour
             PressCatch();
         else if (Input.GetKeyDown(dumpKey))
             PressDump();
+        capacity.text = (maxFolderData - folderData) + " Mo";
+        folderSize.value = (float)folderData / (float)maxFolderData;
     }
 
     void PressCatch()
@@ -62,6 +64,9 @@ public class FolderModule : MonoBehaviour
     void AddData(int data)
     {
         folderData += data;
+        if (folderData > maxFolderData) {
+            folderData = 0;
+        }
         folderSize.value = (float)folderData / (float)maxFolderData;
         capacity.text = (maxFolderData - folderData) + " Mo";
     }
