@@ -15,6 +15,10 @@ public class TrackManager : MonoBehaviour
     public GameObject notePrefab;
     AudioSource audioSource;
 
+    void Start()
+    {
+        SetupModules(false);
+    }
 
     void SetupModules(bool createMode)
     {
